@@ -1,3 +1,4 @@
 name=Cooking With Scraps
 id=cookingWithScraps
 description=Greatly improves the usability of food scrap items in cooking.
+require=\StarlitLibrary

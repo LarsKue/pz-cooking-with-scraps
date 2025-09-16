@@ -1,4 +1,3 @@
-
 local function getField(instance, name)
     local offset = string.len(name)
     for i = 0, getNumClassFields(instance) - 1 do
