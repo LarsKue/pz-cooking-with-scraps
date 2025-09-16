@@ -1,13 +1,7 @@
-local function getField(instance, name)
-    local offset = string.len(name)
-    for i = 0, getNumClassFields(instance) - 1 do
-        local field = getClassField(instance, i)
-        if string.sub(tostring(field), -offset) == name then
-            return field
-        end
-    end
-    return nil
-end
+
+local InventoryUI = require("Starlit/client/ui/InventoryUI")
+local Utils = require("cooking-with-scraps/utils")
+
 
 local function main()
     print("===== Cooking With Scraps =====")
@@ -15,7 +9,7 @@ local function main()
 
     for i = 0, recipes:size() - 1 do
         local recipe = recipes:get(i)
-        local field = getField(recipe, "maxItems")
+        local field = Utils.getField(recipe, "maxItems")
         if field then
             field:setAccessible(true)
             field:setInt(recipe, 9999)
